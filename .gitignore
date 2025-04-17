@@ -1,0 +1,5 @@
+.vscode
+build/
+*.rar
+electron/node_modules/
+electron/out/

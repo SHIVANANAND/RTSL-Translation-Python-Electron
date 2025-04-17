@@ -1,0 +1,184 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Camera Section */
+.camera {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#cambox {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 4px dashed #444;
+    border-radius: 10px;
+    background: #e0e0e0;
+    overflow: hidden;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Translation Section */
+.translation {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#translationBox, #specificLanguageTranslationBox {
+    width: 100%;
+    height: 50px;
+    border: 3px dashed #444;
+    border-radius: 10px;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Dropdown */
+label {
+    font-weight: 600;
+    color: #444;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+select:hover {
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "left"
+            "right";
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #cambox {
+        width: 100%;
+    }
+}
+
+/* Add to your existing style.css */
+#cambox {
+    /* ... your existing styles ... */
+    background: #e0e0e0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="12" cy="11" r="3"></circle><path d="M18 21c-3.3-3.3-5.7-5.7-6-6a2 2 0 0 0-2 0c-.3.3-2.7 2.7-6 6"></path></svg>') no-repeat center;
+    background-size: 20%;
+}
+
+#videoFeed {
+    display: none; /* Start hidden */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#videoFeed.active {
+    display: block; /* Show when active */
+}
+
+/* Voice buttons */
+.voice-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 8px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.voice-button:hover {
+    background: #3e8e41;
+    transform: scale(1.1);
+}
+
+.voice-button svg {
+    width: 100%;
+    height: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+}
